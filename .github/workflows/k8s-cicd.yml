@@ -11,6 +11,8 @@ on:
         required: true
       DOCKERHUB_PW:
         required: true
+      CD_GITHUB_TOKEN:
+        required: true
 jobs:
   ci:
     runs-on: ubuntu-latest
