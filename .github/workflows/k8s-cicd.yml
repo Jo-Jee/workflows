@@ -51,7 +51,7 @@ jobs:
       id: update_tag
       run: |
         version=$(cat ${{ inputs.chart }}/values.dev.yaml | grep tag: | awk '{print $2}')
-        sed -i "s/$version/${{ needs.ci.outputs.tag }}/" ${{ inputs.chart }}/values.dev.yaml
+        sed -i "s/$version/'${{ needs.ci.outputs.tag }}'/" ${{ inputs.chart }}/values.dev.yaml
         git config user.name "GitHub Action Bot"
         git config user.email "<>"
         git add .
